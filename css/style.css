@@ -378,7 +378,6 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-container:hover {
-  fill: #2196f3;
   border: 1px solid #2196f3;
   cursor: pointer;
   transition-duration: 250ms;
@@ -421,8 +420,6 @@ body {
   background-color: var(--brand-blue);
   border: 1px solid var(--brand-blue);
   cursor: pointer;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list {
   display: flex;
