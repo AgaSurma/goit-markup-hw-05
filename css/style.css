@@ -49,6 +49,19 @@ body {
   color: var(--main-color);
   text-decoration: none;
 }
+.current::after {
+  content: "";
+  width: 53px;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  display: block;
+}
+.header-background {
+  position: relative;
+}
 .link {
   color: #212121;
   text-decoration: none;
@@ -57,6 +70,8 @@ body {
 .nav-links :hover,
 .nav-links :focus {
   color: var(--brand-blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-list-contacts {
   align-items: center;
@@ -71,18 +86,25 @@ body {
   padding: 10px;
 }
 
-.nav-contact:hover {
+.nav-contact:hover,
+.nav-contact:active {
   color: var(--brand-blue);
   fill: var(--brand-blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-contact:hover > .contact-icon {
   color: var(--brand-blue);
   fill: var(--brand-blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-contact:hover > .contact-icon-phone {
   color: var(--brand-blue);
   fill: var(--brand-blue);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-list-contacts {
@@ -145,7 +167,7 @@ body {
   letter-spacing: 0, 03em;
   color: var(--secondary-color, grey);
 }
-.asset-list{
+.asset-list {
   gap: 30px;
 }
 .first-section-header {
@@ -224,9 +246,13 @@ body {
   background-color: var(--brand-blue);
   border: 1px solid var(--brand-blue);
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-crew:hover > .social-icon-grey {
   fill: white;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section-footer {
@@ -258,6 +284,8 @@ body {
 .footer-contact:focus {
   color: var(--brand-blue);
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-main {
@@ -290,6 +318,8 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .product-card {
   box-sizing: border-box;
@@ -298,6 +328,7 @@ body {
   font-size: 16px;
   line-height: 1.9;
   color: var(--secondary-color, grey);
+  position: relative;
 }
 
 .product-card:hover,
@@ -305,6 +336,8 @@ body {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-card-header {
@@ -343,11 +376,15 @@ body {
 }
 .icon-container:hover > .icon {
   fill: #2196f3;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-container:hover {
   fill: #2196f3;
   border: 1px solid #2196f3;
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-clients {
@@ -386,6 +423,8 @@ body {
   background-color: var(--brand-blue);
   border: 1px solid var(--brand-blue);
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list {
   display: flex;
@@ -393,4 +432,90 @@ body {
   padding: 0;
   padding-bottom: 30px;
   justify-content: center;
+}
+.backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  width: 528px;
+  height: 581px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: relative;
+  margin: auto;
+  top: 221px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.thumb {
+  position: relative;
+}
+.thumb > .label {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 370px;
+  height: 70px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  padding: 27px 0;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 294px;
+  width: 370px;
+  margin: 0;
+  background: rgba(33, 150, 243, 0.9);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  opacity: 0;
+  transform: translatey(100%);
+}
+.overlay-text {
+  margin-left: 24px;
+  margin-right: 45px;
+}
+
+.product-card:hover .overlay,
+.product-card:focus .overlay {
+  opacity: 1;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translatey(0);
 }
